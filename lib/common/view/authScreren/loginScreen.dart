@@ -42,21 +42,55 @@ class _LoginScreenState extends State<LoginScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  height: 6.h,
-                  width: 20.w,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.sp),
-                    color: grey,
-                    border: Border.all(color: grey),
+              Container(
+                height: 6.h,
+                width: 20.w,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.sp),
+                  color: grey,
+                  border: Border.all(color: grey),
+                ),
+                child: Text(selectedCountryCode),
+              ),
+              SizedBox(
+                width: 70.w,
+                child: TextFormField(
+                  controller: mobileNumberController,
+                  cursorColor: black,
+                  style: AppTextStyles.textFieldHintTextStyle,
+                  decoration: InputDecoration(
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 0, horizontal: 2.w),
+                    hintText: 'Mobile Number',
+                    hintStyle: AppTextStyles.textFieldHintTextStyle,
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.sp),
+                      borderSide: BorderSide(
+                        color: grey,
+                      ),
+                    ),
+                    disabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.sp),
+                      borderSide: BorderSide(
+                        color: grey,
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.sp),
+                      borderSide: BorderSide(
+                        color: grey,
+                      ),
+                    ),
                   ),
                 ),
               )
             ],
-          )
+          ),
+          SizedBox(height: 2.h),
+          ElevatedButton(onPressed: () {
+            
+          }, child: Text('Login'))
         ],
       ),
     ));
